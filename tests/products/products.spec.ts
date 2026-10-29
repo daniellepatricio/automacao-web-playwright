@@ -1,0 +1,2 @@
+import {test} from '../../fixtures/testFixtures';
+test('TC08 - Listagem e detalhes do primeiro produto',async({home,header,products})=>{await home.abrirPaginaInicial();await home.verificarPaginaInicial();await header.abrirProdutos();await products.verificarListagem();await products.verificarProdutosDisponiveis();await products.abrirPrimeiroProduto();await products.verificarPaginaDetalhes();await products.verificarDetalhes();});

@@ -1,0 +1,10 @@
+{
+  "search": {
+    "productName": "Blue Top"
+  },
+  "cart": {
+    "firstProductId": 1,
+    "secondProductId": 2,
+    "expectedQuantity": 2
+  }
+}

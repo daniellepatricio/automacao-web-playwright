@@ -1,0 +1,2 @@
+import {test} from '../../fixtures/testFixtures';import data from '../../data/products.json';
+test('TC09 - Pesquisa de produto',async({home,header,products})=>{await home.abrirPaginaInicial();await home.verificarPaginaInicial();await header.abrirProdutos();await products.verificarListagem();await products.pesquisar(data.search.productName);await products.verificarResultadoPesquisa();await products.verificarProdutosPesquisados(data.search.productName);});

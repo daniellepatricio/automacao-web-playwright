@@ -1,0 +1,33 @@
+# Dependências
+node_modules/
+
+# Variáveis de ambiente (mantém apenas o exemplo)
+.env
+.env.*
+!.env.example
+
+# Artefatos do Playwright
+playwright-report/
+test-results/
+blob-report/
+playwright/.cache/
+playwright/.auth/
+
+# Build / TypeScript
+dist/
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores / IDEs
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json

@@ -1,0 +1,7 @@
+{
+  "order": {
+    "productIds": [1, 2],
+    "comment": "Pedido realizado durante teste automatizado.",
+    "expectedProductCount": 2
+  }
+}

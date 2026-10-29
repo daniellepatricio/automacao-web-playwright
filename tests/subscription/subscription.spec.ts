@@ -1,0 +1,2 @@
+import {test} from '../../fixtures/testFixtures';import data from '../../data/subscription.json';
+test('TC10 - Assinatura de newsletter na home',async({home,subscription})=>{await home.abrirPaginaInicial();await home.verificarPaginaInicial();await subscription.rolarAteRodape();await subscription.verificarSecaoAssinatura();await subscription.preencherEmail(data.email);await subscription.clicarAssinar();await subscription.verificarAssinaturaRealizada();});

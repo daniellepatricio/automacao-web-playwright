@@ -1,0 +1,8 @@
+import {test} from '../../fixtures/testFixtures';
+import {createUser} from '../../factories/userFactory';import {deleteTestAccount} from '../../helpers/accountHelper';
+import invalid from '../../data/invalidCredentials.json';
+test('TC02 - Login com credenciais válidas e exclusão da conta',async({page,home,login,register,header})=>{
+ const u=createUser();try{await register.cadastrarUsuario(u);await header.verificarUsuarioLogado(u.name);await header.logout();await login.verificarLogout();await home.abrirPaginaInicial();await home.verificarPaginaInicial();await home.acessarLogin();await login.verificarFormularioLogin();await login.preencherLogin(u.email,u.password);await login.enviarLogin();await header.verificarUsuarioLogado(u.name);await header.excluirConta();}finally{await deleteTestAccount(page,u);}
+});
+test('TC03 - Login com credenciais inválidas',async({home,login})=>{await home.abrirPaginaInicial();await home.verificarPaginaInicial();await home.acessarLogin();await login.verificarFormularioLogin();await login.preencherLogin(invalid.invalidUser.email,invalid.invalidUser.password);await login.enviarLogin();await login.verificarLoginInvalido();});
+test('TC04 - Logout e retorno ao login',async({page,home,login,register,header})=>{const u=createUser();try{await register.cadastrarUsuario(u);await header.verificarUsuarioLogado(u.name);await header.logout();await login.verificarLogout();await home.abrirPaginaInicial();await home.verificarPaginaInicial();await home.acessarLogin();await login.preencherLogin(u.email,u.password);await login.enviarLogin();await header.verificarUsuarioLogado(u.name);await header.logout();await login.verificarLogout();}finally{await deleteTestAccount(page,u);}});
